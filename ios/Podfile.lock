@@ -159,7 +159,7 @@ DEPENDENCIES:
   - Firebase/MLVisionLabelModel
   - Firebase/MLVisionTextModel
   - firebase_ml_vision (from `.symlinks/plugins/firebase_ml_vision/ios`)
-  - Flutter (from `.symlinks/flutter/ios-release`)
+  - Flutter (from `.symlinks/flutter/ios`)
   - flutter_image_compress (from `.symlinks/plugins/flutter_image_compress/ios`)
   - flutter_user_agent (from `.symlinks/plugins/flutter_user_agent/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
@@ -207,7 +207,7 @@ EXTERNAL SOURCES:
   firebase_ml_vision:
     :path: ".symlinks/plugins/firebase_ml_vision/ios"
   Flutter:
-    :path: ".symlinks/flutter/ios-release"
+    :path: ".symlinks/flutter/ios"
   flutter_image_compress:
     :path: ".symlinks/plugins/flutter_image_compress/ios"
   flutter_user_agent:
