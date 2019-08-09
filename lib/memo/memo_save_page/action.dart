@@ -1,7 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
 
 
-enum MemoSaveAction { switchSendMail,selectCategory,onSave}
+enum MemoSaveAction { switchSendMail,selectCategory,onSave,changeLoading}
 
 class MemoSaveActionCreator {
   static Action switchSendMail(bool send) {
@@ -12,5 +12,8 @@ class MemoSaveActionCreator {
   }
   static Action onSave() {
     return Action(MemoSaveAction.onSave);
+  }
+  static Action changeLoading(bool loading) {
+    return Action(MemoSaveAction.changeLoading,payload: loading);
   }
 }

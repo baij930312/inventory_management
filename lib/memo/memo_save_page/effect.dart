@@ -41,6 +41,10 @@ void _dispose(Action action, Context<MemoSaveState> ctx) async {
 }
 
 void _onSave(Action action, Context<MemoSaveState> ctx) async {
+  if (ctx.state.loading) {
+    return;
+  }
+  ctx.dispatch(MemoSaveActionCreator.changeLoading(true));
   List<MemoImageState> images = ctx.state.images;
   if (images.length > 0) {
     //本地没有上传的图片
@@ -57,6 +61,7 @@ void _onSave(Action action, Context<MemoSaveState> ctx) async {
       //上传
       result = await api.fileUpload(assets.map((item) => item.asset).toList());
       if (result.isError()) {
+        ctx.dispatch(MemoSaveActionCreator.changeLoading(false));
         return;
       }
       rowFiles = result.data['data'] ?? [];
@@ -89,6 +94,7 @@ void _onSave(Action action, Context<MemoSaveState> ctx) async {
     jsonMap.remove('_id');
     addedResult = await api.updateNote(jsonMap);
   }
+  ctx.dispatch(MemoSaveActionCreator.changeLoading(false));
   if (!addedResult.isError()) {
     appRouter.popNum(ctx.context, 2);
   }

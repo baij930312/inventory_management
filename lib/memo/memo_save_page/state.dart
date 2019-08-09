@@ -11,7 +11,7 @@ class MemoSaveState implements Cloneable<MemoSaveState> {
   TextEditingController keywordController = TextEditingController();
   bool sendEmail = false;
   String notes = '';
-
+  bool loading = false;
   String activity;
   List<Categorie> allActivities = [];
   List<MemoImageState> images = [];
@@ -26,6 +26,7 @@ class MemoSaveState implements Cloneable<MemoSaveState> {
       ..notes = notes
       ..activity = activity
       ..images = images
+      ..loading = loading
       ..listTileState = listTileState.clone()
       ..allActivities = allActivities;
   }
@@ -56,7 +57,6 @@ class MemoSaveConnector extends ConnOp<AppState, MemoSaveState> {
 
   @override
   void set(AppState appState, MemoSaveState subState) {
-
     appState.memoSaveState = subState.clone();
   }
 }
