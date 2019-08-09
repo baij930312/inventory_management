@@ -28,6 +28,7 @@ Widget buildView(LoginState state, Dispatch dispatch, ViewService viewService) {
       child: Builder(
         builder: (BuildContext context) {
           return Container(
+            color: Colors.white,
             child: Form(
               onChanged: () {
                 if (state.formKey.currentState.validate()) {
@@ -38,13 +39,15 @@ Widget buildView(LoginState state, Dispatch dispatch, ViewService viewService) {
               },
               key: state.formKey,
               child: SingleChildScrollView(
+
                 child: Column(
                   children: [
                     Stack(children: <Widget>[
                       Image.asset(
                         ImageAssets.loginTitle,
-                        width: Utils.getScreenWidth(context),
+                        width: Utils.getScreenWidth(context)/1.3,
                         fit: BoxFit.fitWidth,
+                        height: Utils.getScreenWidth(context)/1.3,
                       ),
                       Positioned(
                         bottom: 16,
@@ -52,13 +55,14 @@ Widget buildView(LoginState state, Dispatch dispatch, ViewService viewService) {
                         child: buildVersionText(state, dispatch, viewService),
                       )
                     ]),
-                    SizedBox(height: 30),
+                    // SizedBox(height: 30),
                     buildAccountTextField(state, dispatch, viewService),
                     buildPasswordTextField(state, dispatch, viewService),
                     buildServerTextField(state, dispatch, viewService),
                     buildLinkWordTextField(state, dispatch, viewService),
                     SizedBox(height: 20.0),
                     buildSubmitBottom(state, dispatch, viewService),
+                    SizedBox(height: 50.0),
                   ],
                 ),
               ),
@@ -220,7 +224,7 @@ Widget buildVersionText(
     alignment: Alignment.bottomRight,
     child: Text(
       'Version:' + Utils.appVersion,
-      style: TextStyle(color: Colors.white, fontSize: 14),
+      style: TextStyle(color: loginTextColor, fontSize: 14),
     ),
   );
 }
