@@ -23,7 +23,7 @@ dependencies:
   audioplayer: ^0.5.2
   flutter_refresh: ^0.0.1
   firebase_ml_vision: ^0.6.0
-  image_picker: ^0.4.12
+  image_picker: ^0.6.1
   barcode_scan: ^1.0.0
   font_awesome_flutter: ^8.2.0
   cupertino_icons: ^0.1.2
