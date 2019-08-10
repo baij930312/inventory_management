@@ -13,6 +13,7 @@ import 'package:inventory_management/printing/printing_page/state.dart';
 import 'package:inventory_management/printing/std_label_page/state.dart';
 import 'package:inventory_management/printing/stk_label_page/state.dart';
 import 'package:inventory_management/setting_page/reset_password_page/state.dart';
+import 'package:inventory_management/setting_page/reset_server_page/state.dart';
 import 'package:inventory_management/setting_page/state.dart';
 import 'package:inventory_management/tab_page/state.dart';
 import 'package:inventory_management/welcome_page/state.dart';
@@ -35,6 +36,7 @@ class AppState implements Cloneable<AppState> {
   SettingState settingState = SettingState();
   ResetPasswordState resetPasswordState = ResetPasswordState();
   PrintingState printingState = PrintingState();
+  ResetServerPageState reserServerState = ResetServerPageState();
 
   @override
   AppState clone() {
@@ -56,6 +58,7 @@ class AppState implements Cloneable<AppState> {
       ..stdLabelState = stdLabelState.clone()
       ..resetPasswordState = resetPasswordState.clone()
       ..printingState = printingState.clone()
+      ..reserServerState = reserServerState.clone()
       ..settingState = settingState.clone();
   }
 }

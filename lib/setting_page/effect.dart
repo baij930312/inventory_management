@@ -2,9 +2,11 @@ import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
 import 'package:inventory_management/common/utils.dart';
+import 'package:inventory_management/login_page/page.dart';
 import 'package:inventory_management/route/router.dart';
 import 'package:inventory_management/setting_page/model/blue_tooth_model.dart';
 import 'package:inventory_management/setting_page/reset_password_page/page.dart';
+import 'package:inventory_management/setting_page/reset_server_page/page.dart';
 import 'package:inventory_management/welcome_page/model/cache_model.dart';
 import 'package:printer/printer.dart';
 import 'action.dart';
@@ -13,6 +15,7 @@ import 'state.dart';
 Effect<SettingState> buildEffect() {
   return combineEffects(<Object, Effect<SettingState>>{
     SettingAction.onJumpToResetPassword: _onJumpToResetPassword,
+    SettingAction.onJumpToResetServer: _onJumpToResetServer,
     SettingAction.onSignOut: _onSignOut,
     SettingAction.onClearCache: _onClearCache,
     SettingAction.onConnenctBluetooth: _onConnenctBluetooth,
@@ -59,6 +62,10 @@ void _onJumpToResetPassword(Action action, Context<SettingState> ctx) {
   appRouter.pushScreen(ctx.context, routerNameForResetPasswordPage);
 }
 
+void _onJumpToResetServer(Action action, Context<SettingState> ctx) {
+  appRouter.pushScreen(ctx.context, routerNameForResetServerPage);
+}
+
 void _onConnenctBluetooth(Action action, Context<SettingState> ctx) {
   String name = action.payload;
 
@@ -73,7 +80,6 @@ void _onConnenctBluetooth(Action action, Context<SettingState> ctx) {
 }
 
 void _onClearCache(Action action, Context<SettingState> ctx) async {
-  Utils.showSnackBar(ctx.context, text: 'Cache has been cleaned.');
   int cacheSize = await DiskCache().cacheSize();
   await showDialog(
       context: ctx.context,
@@ -120,6 +126,17 @@ void _onSignOut(Action action, Context<SettingState> ctx) {
               child: new Text("Sign out"),
               onPressed: () {
                 Navigator.of(ctx.context).pop();
+                appRouter.popAll(ctx.context);
+                appRouter.replaceScreen(
+                  ctx.context,
+                  routerNameForLoginPage,
+                  arguments: {
+                    'account': cacheModel.account,
+                    'password': cacheModel.password,
+                    'hostUri': cacheModel.hostUrl,
+                    'linkWord': cacheModel.linkword,
+                  },
+                );
               },
             ),
           ],

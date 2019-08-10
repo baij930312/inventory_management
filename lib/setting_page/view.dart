@@ -23,13 +23,14 @@ Widget buildView(
       color: mainColor,
       child: ListView(
         children: <Widget>[
-          _buildTile(ImageAssets.setting1, 'Reset Password',
-              () => dispatch(SettingActionCreator.onJumpToResetPassword())),
+          _buildTile(ImageAssets.setting3, 'Server Managerment',
+              () => dispatch(SettingActionCreator.onJumpToResetServer())),
+          // _buildSeparator(),
+          // _buildTile(ImageAssets.setting1, 'Reset Password',
+          //     () => dispatch(SettingActionCreator.onJumpToResetPassword())),
           _buildSeparator(),
           _buildTile(ImageAssets.setting2, 'Clean Cache',
               () => dispatch(SettingActionCreator.onClearCache())),
-          _buildSeparator(),
-          _buildTile(ImageAssets.setting3, 'Server Managerment', () {}),
           _buildSeparator(),
           Container(
             decoration: BoxDecoration(

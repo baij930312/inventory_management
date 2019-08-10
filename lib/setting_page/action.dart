@@ -2,6 +2,7 @@ import 'package:fish_redux/fish_redux.dart';
 
 enum SettingAction {
   onJumpToResetPassword,
+  onJumpToResetServer,
   onClearCache,
   onSignOut,
   onServerManagerment,
@@ -14,6 +15,10 @@ enum SettingAction {
 class SettingActionCreator {
   static Action onJumpToResetPassword() {
     return const Action(SettingAction.onJumpToResetPassword);
+  }
+
+  static Action onJumpToResetServer() {
+    return const Action(SettingAction.onJumpToResetServer);
   }
 
   static Action onClearCache() {
