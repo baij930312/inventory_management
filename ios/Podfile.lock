@@ -159,7 +159,7 @@ DEPENDENCIES:
   - Firebase/MLVisionLabelModel
   - Firebase/MLVisionTextModel
   - firebase_ml_vision (from `.symlinks/plugins/firebase_ml_vision/ios`)
-  - Flutter (from `.symlinks/flutter/ios-release`)
+  - Flutter (from `.symlinks/flutter/ios`)
   - flutter_image_compress (from `.symlinks/plugins/flutter_image_compress/ios`)
   - flutter_user_agent (from `.symlinks/plugins/flutter_user_agent/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
@@ -207,7 +207,7 @@ EXTERNAL SOURCES:
   firebase_ml_vision:
     :path: ".symlinks/plugins/firebase_ml_vision/ios"
   Flutter:
-    :path: ".symlinks/flutter/ios-release"
+    :path: ".symlinks/flutter/ios"
   flutter_image_compress:
     :path: ".symlinks/plugins/flutter_image_compress/ios"
   flutter_user_agent:
@@ -256,7 +256,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
-  image_picker: ee00aab0487cedc80a304085219503cc6d0f2e22
+  image_picker: 86b84c4fe89267356a1f17297a45b5d317ebd2e7
   MTBBarcodeScanner: 5b97f10a037e2560ff104da413343c5ce9413911
   multi_image_picker: d11bcb47b586660877b3ae399fa50255c12285eb
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48

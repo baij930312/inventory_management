@@ -29,6 +29,8 @@ Widget buildView(LoginState state, Dispatch dispatch, ViewService viewService) {
         builder: (BuildContext context) {
           return Container(
             color: Colors.white,
+            height: double.infinity,
+               
             child: Form(
               onChanged: () {
                 if (state.formKey.currentState.validate()) {
@@ -41,7 +43,7 @@ Widget buildView(LoginState state, Dispatch dispatch, ViewService viewService) {
               child: SingleChildScrollView(
 
                 child: Column(
-                  children: [
+                   children: [
                     Stack(children: <Widget>[
                       Image.asset(
                         ImageAssets.loginTitle,

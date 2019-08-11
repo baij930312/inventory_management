@@ -19,6 +19,7 @@ void main() async {
     BlocProvider(
       bloc: appBloc,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Inventory Management',
         theme: ThemeData(
           primaryColor: mainColor,
