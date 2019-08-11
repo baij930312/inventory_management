@@ -22,7 +22,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name=".App"
-        android:label="inventory_management"
+        android:label="MobileInfoCollection"
         android:icon="@mipmap/ic_launcher"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
