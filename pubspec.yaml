@@ -48,7 +48,8 @@ dependencies:
     # git:
     #   url: git://github.com/alibaba/fish-redux.git
   printer:
-    path: ./plugin/printer
+    git:
+      url: git@github.com:baij930312/printer.git
 
 dev_dependencies:
   flutter_test:

@@ -471,9 +471,11 @@ packages:
   printer:
     dependency: "direct main"
     description:
-      path: "plugin/printer"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "03d2d5f3f9969da016e40fde15f3e597e275d37d"
+      url: "git@github.com:baij930312/printer.git"
+    source: git
     version: "0.0.1"
   pub_semver:
     dependency: transitive
