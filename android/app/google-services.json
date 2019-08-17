@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:363734880643:android:11070d91e2ce6b69",
         "android_client_info": {
-          "package_name": "com.example.inventorymanagement"
+          "package_name": "com.app.inventorymanagement"
         }
       },
       "oauth_client": [
