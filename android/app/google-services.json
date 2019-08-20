@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:363734880643:android:11070d91e2ce6b69",
+        "mobilesdk_app_id": "1:363734880643:android:5684bd0bf279bd69",
         "android_client_info": {
           "package_name": "com.app.inventorymanagement"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "363734880643-vd6fliuqf4r11hqjgjiaem104g2663kq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.inventorymanagement",
+            "certificate_hash": "9bca87fc00c3653de7f34d6f733e9356553f3d81"
+          }
+        },
         {
           "client_id": "363734880643-9p7h10k4euaqgfhdgm2dh7g354ikvb0p.apps.googleusercontent.com",
           "client_type": 3
@@ -25,15 +33,20 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363734880643-9p7h10k4euaqgfhdgm2dh7g354ikvb0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "363734880643-damq5p4ochj0v7ukvq3rue51nmotnurr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.mobileinfocollection"
+              }
+            }
+          ]
         }
       }
     }
