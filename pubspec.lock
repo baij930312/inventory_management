@@ -191,7 +191,7 @@ packages:
       name: firebase_ml_vision
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.6.0+2"
+    version: "0.9.2"
   fish_redux:
     dependency: "direct main"
     description:
@@ -327,7 +327,7 @@ packages:
       name: image_picker
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.6.1+1"
+    version: "0.5.4+3"
   io:
     dependency: transitive
     description:

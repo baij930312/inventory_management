@@ -10,6 +10,7 @@ import 'state.dart';
 Effect<OcrListState> buildEffect() {
   return combineEffects(<Object, Effect<OcrListState>>{
     Lifecycle.initState: _onInit,
+    Lifecycle.dispose: _dispose,
     OcrListAction.onSubmit: _onSubmit,
   });
 }
@@ -36,4 +37,8 @@ void _onSubmit(Action action, Context<OcrListState> ctx) async {
     return state.selected ? state.text : '';
   }).toList();
   appRouter.popScreen(ctx.context, strList.join());
+}
+
+void _dispose(Action action, Context<OcrListState> ctx) async {
+   ctx.state.textDetector.close(); 
 }
