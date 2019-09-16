@@ -15,7 +15,7 @@ Widget buildView(
         RawMaterialButton(
           textStyle: TextStyle(color: Colors.white),
           child: Text('Save'),
-          onPressed: () => {},
+          onPressed: () => dispatch(InventoryActionCreator.onScan()),
         ),
       ],
     ),
@@ -59,7 +59,7 @@ Widget buildView(
                   Center(
                     child: SizedBox(
                       height: h(100),
-                      width:w(600) ,
+                      width: w(600),
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.green, width: 1.0),

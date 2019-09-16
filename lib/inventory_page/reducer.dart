@@ -6,6 +6,7 @@ Reducer<InventoryState> buildReducer() {
   return asReducer(
     <Object, Reducer<InventoryState>>{
       InventoryAction.add: _add,
+      InventoryAction.clean: _clean,
       InventoryAction.subtract: _subtract,
       InventoryAction.scaned: _scaned,
       InventoryAction.init: _init,
@@ -21,6 +22,15 @@ InventoryState _route(InventoryState state, Action action) {
 InventoryState _add(InventoryState state, Action action) {
   final InventoryState newState = state.clone();
   newState.qty.text = (int.parse(newState.qty.text) + 1).toString();
+  return newState;
+}
+InventoryState _clean(InventoryState state, Action action) {
+  final InventoryState newState = state.clone();
+  newState.qty.text = '';
+  newState.tagNumber.text = '';
+  newState.stockNumber.text = '';
+  newState.location.text = '';
+  newState.lotNumber.text = '';
   return newState;
 }
 

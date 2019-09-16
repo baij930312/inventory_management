@@ -1,6 +1,7 @@
 import 'package:fast_qr_reader_view/fast_qr_reader_view.dart';
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
+import 'package:inventory_management/agent/api.dart';
 import 'package:inventory_management/inventory_page/scanner_page/page.dart';
 import 'package:inventory_management/inventory_page/scanner_page/state.dart';
 import 'package:inventory_management/login_page/model/user_model.dart';
@@ -14,6 +15,7 @@ Effect<InventoryState> buildEffect() {
     InventoryAction.onScan: _onScan,
     Lifecycle.dispose: _dispose,
     Lifecycle.initState: _onInit,
+    InventoryAction.onSave: _onSave,
   });
 }
 
@@ -89,6 +91,62 @@ void _onScan(Action action, Context<InventoryState> ctx) async {
 
   if (result?.isfull() ?? false) {
     // ctx.dispatch(InventoryActionCreator.scaned(result));
+  }
+}
+
+void _onSave(Action action, Context<InventoryState> ctx) async {
+  ApiModel result = await api.tagScan(
+    partNo: ctx.state.stockNumber.text,
+    tagNo: ctx.state.tagNumber.text,
+    loc: ctx.state.location.text,
+    qty: int.parse(ctx.state.qty.text),
+    lot: ctx.state.lotNumber.text,
+  );
+  if (!result.isError()) {
+    await showDialog(
+        context: ctx.context,
+        builder: (_) {
+          return AlertDialog(
+            title: Text("Save success!"),
+            actions: <Widget>[
+              new FlatButton(
+                child: new Text("Cancel"),
+                onPressed: () {
+                  Navigator.of(ctx.context).pop();
+                },
+              ),
+              new FlatButton(
+                child: new Text("Confirm"),
+                onPressed: () async {
+                  ctx.dispatch(InventoryActionCreator.clean());
+                  Navigator.of(ctx.context).pop();
+                },
+              ),
+            ],
+          );
+        });
+  } else {
+    await showDialog(
+        context: ctx.context,
+        builder: (_) {
+          return AlertDialog(
+            title: Text("Save failed"),
+            actions: <Widget>[
+              new FlatButton(
+                child: new Text("Cancel"),
+                onPressed: () {
+                  Navigator.of(ctx.context).pop();
+                },
+              ),
+              new FlatButton(
+                child: new Text("Confirm"),
+                onPressed: () async {
+                  Navigator.of(ctx.context).pop();
+                },
+              ),
+            ],
+          );
+        });
   }
 }
 

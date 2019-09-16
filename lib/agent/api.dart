@@ -131,6 +131,25 @@ class Api {
       params: formData,
     );
   }
+
+  Future<ApiModel> tagScan({
+    String partNo,
+    String lot,
+    String loc,
+    int qty,
+    String tagNo,
+  }) async {
+    return httpUtil.post(
+      '/mm/tag/scan',
+      params: {
+        "part_no": partNo ?? '',
+        "tag_no": tagNo ?? '',
+        "loc": loc ?? '',
+        "lot": lot ?? '',
+        "qty": qty ?? 0,
+      },
+    );
+  }
 }
 
 final Api api = Api();
