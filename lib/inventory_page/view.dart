@@ -15,7 +15,7 @@ Widget buildView(
         RawMaterialButton(
           textStyle: TextStyle(color: Colors.white),
           child: Text('Save'),
-          onPressed: () => dispatch(InventoryActionCreator.onScan()),
+          onPressed: () => dispatch(InventoryActionCreator.save()),
         ),
       ],
     ),

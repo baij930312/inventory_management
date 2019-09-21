@@ -99,7 +99,7 @@ void _onSave(Action action, Context<InventoryState> ctx) async {
     partNo: ctx.state.stockNumber.text,
     tagNo: ctx.state.tagNumber.text,
     loc: ctx.state.location.text,
-    qty: int.parse(ctx.state.qty.text),
+    qty: int.parse(ctx.state.qty.text ?? '0'),
     lot: ctx.state.lotNumber.text,
   );
   if (!result.isError()) {
@@ -130,7 +130,10 @@ void _onSave(Action action, Context<InventoryState> ctx) async {
         context: ctx.context,
         builder: (_) {
           return AlertDialog(
-            title: Text("Save failed"),
+            title: Text(result.errMsg ,style: TextStyle(color: Colors.black
+            ),
+
+             ),
             actions: <Widget>[
               new FlatButton(
                 child: new Text("Cancel"),

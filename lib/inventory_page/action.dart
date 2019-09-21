@@ -28,7 +28,7 @@ class InventoryActionCreator {
     return Action(InventoryAction.scaned, payload: data);
   }
 
-  static Action save(Map<String, dynamic> data) {
-    return Action(InventoryAction.onSave, payload: data);
+  static Action save( ) {
+    return Action(InventoryAction.onSave,  );
   }
 }
